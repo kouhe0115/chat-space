@@ -16,11 +16,11 @@
 
 ### users
 
-| column   | type          | option      |
-|----------|---------------|-------------|
-| name     | string        | null : false|
-| mail     | string        | primary key |
-| password | string        | null : false|
+| column   | type          | option            |
+|----------|---------------|-------------------|
+| name     | string        | null :false       |
+| mail     | string        | primary key :true |
+| password | string        | null :false       |
 
 
 * association
@@ -30,12 +30,12 @@
 
 ### massages
 
-| column     | type   | option       |
-|------------|--------|--------------|
-| body       | text   |              |
-| image      | string |              |
-| user_id    | int    | null : false |
-| group_id   | int    | null : false |
+| column     | type          | option                         |
+|------------|---------------|--------------------------------|
+| body       | text          |                                |
+| image      | string        |                                |
+| user_id    | refference    | null :false, foreign_key :true |
+| group_id   | refference    | null :false, foreign_key :true |
 
 * association
     - belongs_to users
@@ -45,8 +45,7 @@
 
 | column     | type          | option       |
 |------------|---------------|--------------|
-| group_id   | refference    |              |
-| group_name | string        | null : false |
+| group_name | string        | null :false  |
 
 * association
     - has_many messages,
@@ -55,10 +54,10 @@
 
 ### groups_users
 
-| column   | type            | option       |
-|----------|-----------------|--------------|
-| user_id  | refference      | null : false |
-| group_id | refference      | null : false |
+| column   | type            | option                         |
+|----------|-----------------|--------------------------------|
+| user_id  | refference      | null :false, foreign_key :true |
+| group_id | refference      | null :false, foreign_key :true |
 
 * association
     - belomgs_to groups
