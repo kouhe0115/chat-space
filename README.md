@@ -18,9 +18,9 @@
 
 | column   | type          | option      |
 |----------|---------------|-------------|
-| name     | string        | not null    |
+| name     | string        | null : false|
 | mail     | string        | primary key |
-| password | string        | not null    |
+| password | string        | null : false|
 
 
 * association
@@ -30,12 +30,12 @@
 
 ### massages
 
-| column     | type   | option   |
-|------------|--------|----------|
-| body       | text   |          |
-| image      | string |          |
-| user_id    | int    | not null |
-| group_id   | int    | not null |
+| column     | type   | option       |
+|------------|--------|--------------|
+| body       | text   |              |
+| image      | string |              |
+| user_id    | int    | null : false |
+| group_id   | int    | null : false |
 
 * association
     - belongs_to users
@@ -43,10 +43,10 @@
 
 ### groups
 
-| column     | type          | option   |
-|------------|---------------|----------|
-| group_id   | refference    |          |
-| group_name | string        | not null |
+| column     | type          | option       |
+|------------|---------------|--------------|
+| group_id   | refference    |              |
+| group_name | string        | null : false |
 
 * association
     - has_many messages,
@@ -55,10 +55,10 @@
 
 ### groups_users
 
-| column   | type            | option   |
-|----------|-----------------|----------|
-| user_id  | refference      | not null |
-| group_id | refference      | not null |
+| column   | type            | option       |
+|----------|-----------------|--------------|
+| user_id  | refference      | null : false |
+| group_id | refference      | null : false |
 
 * association
     - belomgs_to groups
