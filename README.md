@@ -18,7 +18,6 @@
 
 | column   | type          | option      |
 |----------|---------------|-------------|
-| user_id  | refference    |             |
 | name     | string        | not null    |
 | mail     | string        | primary key |
 | password | string        | not null    |
@@ -33,7 +32,6 @@
 
 | column     | type   | option   |
 |------------|--------|----------|
-| message_id | int    |          |
 | body       | text   |          |
 | image      | string |          |
 | user_id    | int    | not null |
@@ -59,7 +57,6 @@
 
 | column   | type            | option   |
 |----------|-----------------|----------|
-| id       | int             |          |
 | user_id  | refference      | not null |
 | group_id | refference      | not null |
 
