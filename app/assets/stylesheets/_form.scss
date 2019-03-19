@@ -1,0 +1,44 @@
+.form{
+  height: 90px;
+  background-color: $form_bg;
+  display: flex;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  .new-message{
+      display: flex;
+      width: 100%;
+      .input-box{
+          position: relative;
+          width: 100%;
+          & input{
+              height: 50px;
+              color: $main_font_color;
+              padding: 0 40px 0 10px;
+              box-sizing: border-box;
+              border-style: none;
+              width: 100%;
+          }
+          .image-box{
+              position: absolute;
+              top: 0; bottom: 0; right: 0;
+              line-height: 50px;
+              padding: 0 10px;
+              box-sizing: border-box;
+              & label i{
+                  cursor : pointer;
+                  & input{
+                      display: none;
+                  }
+              }
+          }
+      }
+      .submit-btn input{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: $main_sub_color;
+          color: $font_color_white;
+      }
+  }
+}

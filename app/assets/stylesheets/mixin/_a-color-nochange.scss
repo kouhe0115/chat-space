@@ -1,0 +1,38 @@
+@mixin a-color-nochange(){
+  & a, & a:hover, & a:visited{
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@mixin group_style(){
+  margin-bottom: 40px;
+    &__name{
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+    &__message{
+      font-size: 11px;
+    }
+}
+
+@mixin message_style(){
+  padding-bottom: 40px;
+  .message__upper-info{
+    display: flex;
+    margin-bottom: 10px;
+    .message__upper-info__taller{
+      color: $main_font_color;
+      font-size: 16px;
+      }
+      .message__upper-info__date{
+        color: $font_color_gray;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+  }
+  .message__text{
+    color: $main_font_color;
+    font-size: 14px;
+  }
+}

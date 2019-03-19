@@ -1,0 +1,48 @@
+.side-content{
+  @include a-color-nochange();
+  width:300px;
+  background-color: $side_content_bg;
+  height: 100vh;
+  float: left;
+  .side-header{
+      padding: 0 20px;
+      height: 100px;
+      background-color: $side_header_bg;
+      align-items: center;
+      display: flex;
+      color: $font_color_white;
+      &__box{
+          display: flex;
+          width: 100%;
+          font-weight: bold;
+          justify-content: space-between;
+          &--name{
+              color: $font_color_white;
+          }
+          &--navi{
+              display: flex;
+              & li{
+                  margin-left: 0.3rem;
+                  & a{
+                      text-decoration: none;
+                  }
+              }
+          }
+      }
+  }
+  .groups{
+      height: calc(100vh - 100px);
+      background-color: $side_content_bg;
+      padding: 20px 20px 0;
+      box-sizing: border-box;
+      overflow: scroll;
+      color: $font_color_white;
+      & a{
+          text-decoration: none;
+          color: $font_color_white;
+          .group{
+              @include group_style();
+          }
+      }
+  }
+}
