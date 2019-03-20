@@ -7,24 +7,24 @@
   overflow: scroll;
   box-sizing: border-box;
   &_box{
-      justify-content: space-between;
-      float: left;
-      padding-top: 35px;
-      &_name{
-          font-size: 20px;
-          color: $font_color_balck;
-          padding-bottom: 15px;
-      }
-      &_group{
-          font-size: 12px;
-          color: $font_color_gray;
+    justify-content: space-between;
+    float: left;
+    padding-top: 35px;
+    &_name{
+      font-size: 20px;
+      color: $font_color_balck;
+      padding-bottom: 15px;
+    }
+    &_group{
+      font-size: 12px;
+      color: $font_color_gray;
+      display: flex;
+      & ul{
+        display: flex;
+        & li{
           display: flex;
-          & ul{
-              display: flex;
-              & li{
-                  display: flex;
-              }
-          }
+        }
       }
+    }
   }
 }
