@@ -7,14 +7,14 @@
   @import "main_header";
   @import "main_header_box_edit_btn";
   .messages{
-      height: calc(100vh - 190px);
-      overflow: scroll;
-      background-color: $main_content_bg;
-      box-sizing: border-box;
-      padding: 46px 40px;
-      .message{
-          @include message_style();
-      }
+    height: calc(100vh - 190px);
+    overflow: scroll;
+    background-color: $main_content_bg;
+    box-sizing: border-box;
+    padding: 46px 40px;
+    .message{
+      @include message_style();
+    }
   }
   @import "form";
 }

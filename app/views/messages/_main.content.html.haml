@@ -1,40 +1,40 @@
 .main-content
-    .header
-        .header_box
-            .header_box_name
-                %h2 group_name
-            .header_box_group
-                %ul
-                    %li member:
-                    %li  name
-        .header_box_edit-btn
-            %a(href="#")
-                .header_box_edit-btn_btn
-                    Edit
-    .messages
-        .message
-            .message__upper-info
-                %p.message__upper-info__talker
-                    user_name
-                %p.message__upper-info__date
-                    2019/03/19
-            %P.message__text
-                sample__text
-        .message
-            .message__upper-info
-                %p.message__upper-info__talker
-                    user_name
-                %p.message__upper-info__date
-                    2019/03/19
-            %P.message__text
-                sample__text
-    .form
-        .new-message
-            .input-box
-                %input{:placeholder => "type a message", :type => "text", :name => "message"}
-                .image-box
-                    %label
-                        %i.fa.fa-image.fa-lg
-                            %input{:type => "file"}
-            .submit-btn
-                %input{:type => "submit", :value => "Send"}
+  .header
+    .header_box
+      .header_box_name
+        %h2 group_name
+      .header_box_group
+        %ul
+          %li member:
+          %li  name
+    .header_box_edit-btn
+      %a(href="#")
+        .header_box_edit-btn_btn
+          Edit
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker
+          user_name
+        %p.message__upper-info__date
+          2019/03/19
+        %P.message__text
+          sample__text
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker
+          user_name
+        %p.message__upper-info__date
+          2019/03/19
+        %P.message__text
+          sample__text
+  .form
+    .new-message
+      .input-box
+        %input{placeholder: "type a message", type:  "text", name: "message"}
+          .image-box
+            %label
+              %i.fa.fa-image.fa-lg
+                %input{type: "file"}
+      .submit-btn
+        %input{type: "submit", value: "Send"}
