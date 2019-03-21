@@ -37,12 +37,8 @@
     box-sizing: border-box;
     overflow: scroll;
     color: $font_color_white;
-    & a{
-      text-decoration: none;
-      color: $font_color_white;
-      .group{
-        @include group_style();
-      }
+    .group{
+      @include group_style();
     }
   }
 }

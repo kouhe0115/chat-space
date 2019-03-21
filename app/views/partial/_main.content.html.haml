@@ -2,39 +2,35 @@
   .header
     .header_box
       .header_box_name
-        %h2 group_name
+        = @group.name
       .header_box_group
-        %ul
-          %li member:
-          %li  name
+        - @group.users.each do |user|
+          Menber :
+          = user.name
     .header_box_edit-btn
-      %a(href="#")
+      = link_to edit_group_path(@group) do
         .header_box_edit-btn_btn
           Edit
   .messages
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker
-          user_name
-        %p.message__upper-info__date
-          2019/03/19
-      %P.message__text
-        sample__text
-    .message
-      .message__upper-info
-        %p.message__upper-info__talker
-          user_name
-        %p.message__upper-info__date
-          2019/03/19
-      %P.message__text
-        sample__text
+    - @messages.each do |message|
+      .message
+        .message__upper-info
+          .message__upper-info__talker
+            = message.user.name
+          .message__upper-info__date
+            = message.created_at.strftime("%Y/%m/%d %H:%M %Z")
+        .message__text
+          - if message.content.present?
+            %p.message__text__content
+              = message.content
+          = image_tag message.image.url if message.image.present?
   .form
     .new-message
       .input-box
-        %input{placeholder: "type a message", type:  "text", name: "message"}
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, placeholder: 'type a message'
           .image-box
-            %label
-              %i.fa.fa-image.fa-lg
-                %input{type: "file"}
-      .submit-btn
-        %input{type: "submit", value: "Send"}
+            = f.label :image, class: 'image-box' do
+              = fa_icon 'picture-o', class: 'label'
+              = f.file_field :image, class: 'input'
+          = f.submit 'Send', class: 'submit-btn'
