@@ -7,6 +7,9 @@
   .new-message{
     display: flex;
     width: 100%;
+    form{
+      display:flex;
+    }
     .input-box{
       position: relative;
       width: 100%;
@@ -20,19 +23,18 @@
       }
       .image-box{
         position: absolute;
-        top: 0; bottom: 0; right: 0;
+        top: 0; bottom: 0; right: 60px;
         line-height: 50px;
         padding: 0 10px;
         box-sizing: border-box;
-        & label i{
+        & label{
           cursor : pointer;
-          & input{
-            display: none;
-          }
+        }
+        & input{
+          display: none;
         }
       }
-    }
-      .submit-btn input{
+      .submit-btn {
         width: 100px;
         height: 50px;
         padding: 0 30px;
@@ -40,5 +42,6 @@
         background-color: $main_sub_color;
         color: $font_color_white;
       }
+    }
   }
 }
