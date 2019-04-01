@@ -13,7 +13,7 @@
           Edit
   .messages
     - @messages.each do |message|
-      .message
+      .message{data_id:"#{message.id}"}
         .message__upper-info
           .message__upper-info__talker
             = message.user.name
@@ -27,8 +27,8 @@
   .form
     .new-message
       .input-box
-        = form_for [@group, @message] do |f|
-          = f.text_field :content, placeholder: 'type a message'
+        = form_for [@group, @message], id: "new_message" do |f|
+          = f.text_field :content, placeholder: 'type a message', id: "text__field"
           .image-box
             = f.label :image, class: 'image-box' do
               = fa_icon 'picture-o', class: 'label'
