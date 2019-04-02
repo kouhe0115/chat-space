@@ -1,9 +1,5 @@
 $(function(){
   function buildHTML(message){
-    var insertImage = '';
-    // if(message.image){
-    //   insertImage = `<img src = "${message.image}">`;
-    // }
     var insertImage = message.image == null ? "" : `<img src="${message.image}">`;
     var html = `<div class="message" data_id="${message.id}">
                   <div class="message__upper-info">
@@ -45,11 +41,11 @@ function autoUpdata(){
     $.each(data, function(i, data){
       $('.messages').append(buildHTML(data));
     });
-    scroll_view();
   })
   .fail(function(){
     alert('自動更新に失敗しました');
   });
+  scroll_view();
 };
 
   $('#new_message').on('submit', function(e){
@@ -68,7 +64,6 @@ function autoUpdata(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.messages').val('');
-      scroll_view();
       $('#text__field').val('');
       $('.submit-btn').prop('disabled', false);
     })
@@ -76,6 +71,7 @@ function autoUpdata(){
       alert('error');
     });
   })
+  scroll_view();
 });
 
 
