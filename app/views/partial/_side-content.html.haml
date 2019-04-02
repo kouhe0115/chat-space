@@ -14,15 +14,8 @@
     .group
       - current_user.groups.each do |group|
         = link_to group_messages_path(group) do
-          .group
+          .group#group
             .group__name
               = group.name
             .group__message
               = group.show_last_message
-
-    -# %a(href="#")
-    -#   .group
-    -#     %p.group__name
-    -#       testgroup2
-    -#     %p.group__message
-    -#       testmessages2
