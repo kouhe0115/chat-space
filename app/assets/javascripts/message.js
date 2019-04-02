@@ -1,9 +1,10 @@
 $(function(){
   function buildHTML(message){
     var insertImage = '';
-    if(message.image){
-      insertImage = `<img src = "${message.image.url}">`;
-    }
+    // if(message.image){
+    //   insertImage = `<img src = "${message.image}">`;
+    // }
+    var insertImage = message.image == null ? "" : `<img src="${message.image}">`;
     var html = `<div class="message" data_id="${message.id}">
                   <div class="message__upper-info">
                     <div class="message__upper-info__talker">
@@ -35,14 +36,12 @@ function autoUpdata(){
   }else{
     var message_id = 0;
   }
-  console.log(message_id);
   $.ajax({
     type: 'GET',
     dataType: 'json',
     data: { message_id: message_id }
   })
   .done(function(data){
-    console.log(data.length);
     $.each(data, function(i, data){
       $('.messages').append(buildHTML(data));
     });
