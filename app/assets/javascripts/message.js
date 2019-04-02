@@ -43,9 +43,8 @@ function autoUpdata(){
     });
   })
   .fail(function(){
-    alert('自動更新に失敗しました');
+    // alert('自動更新に失敗しました');
   });
-  scroll_view();
 };
 
   $('#new_message').on('submit', function(e){
@@ -65,13 +64,14 @@ function autoUpdata(){
       $('.messages').append(html);
       $('.messages').val('');
       $('#text__field').val('');
+      scroll_view();
       $('.submit-btn').prop('disabled', false);
     })
     .fail(function(){
       alert('error');
     });
   })
-  scroll_view();
+  // $('.messages').scrollTop($(".messages")[0].scrollHeight);
 });
 
 
