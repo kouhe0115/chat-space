@@ -24,10 +24,11 @@
       %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
     .chat-group-form__field--right
       .chat-group-users
-        .chat-group-user.clearfix
-          %p.chat-group-user__name
-            -# = current_user.name
-            -# = group_user.name
+        -@group.group_users.each do |users|
+          .chat-group-user.clearfix
+            %input{name: "group[user_ids][]",type:'hidden', value:"#{users.user_id}"}
+            %p.chat-group-user__name
+              = users.user.name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
