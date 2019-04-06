@@ -51,6 +51,7 @@ $(document).on('turbolinks:load', function() {
     var name = $(this).data('user-name');
     var insertHTML = buildHTML(id, name);
     $('.chat-group-users').append(insertHTML);
+    $('#user-search-field').val('');
     $(this).parent('.chat-group-user').remove();
   });
 
